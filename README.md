@@ -1,4 +1,4 @@
-# dstassignment1
+# Data Science Toolbox Assignment 1
 Data Science Toolbox Assignment 1
 # First: Install geoip
 > pip install maxinddb-geolilte2

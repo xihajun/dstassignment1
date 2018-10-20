@@ -31,7 +31,8 @@ for line in f:
         payload = json.loads(j["payload"])
     except:
         payload = j["payload"]
-        print(payload)  
+        print(payload)
+        continue
     #payload = json.loads(j["payload"]) is not work for H's laptop
     try:    
         if j["channel"] == "glastopf.events":

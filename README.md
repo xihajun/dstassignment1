@@ -2,7 +2,9 @@ Data Science Toolbox Assignment 1
 ===
 Data Science Toolbox Assignment 1
 # 1. Install Geoip
-> pip install maxinddb-geolilte2<br> 
+> pip install maxinddb-geolilte2
+
+
 If it shows that the module doesn't exist, please try things below:<br> 
 > import sys<br> 
 > sys.path.append('Your package path')

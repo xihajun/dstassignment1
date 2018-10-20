@@ -34,24 +34,21 @@ for line in f:
         print(payload)
         continue
     #payload = json.loads(j["payload"]) is not work for H's laptop
-    try:    
-        if j["channel"] == "glastopf.events":
-            temp.append(payload["pattern"])
-            temp.append(payload["filename"])
-            temp.append(payload["request_raw"])
-            temp.append(payload["request_url"])
-            temp.append(payload["source"][0])
-            temp.append(payload["source"][1])
-            glastopf.append(temp)
-        elif j["channel"] == "amun.events":
-            temp.append(payload["attackerIP"])
-            temp.append(payload["attackerPort"])
-            temp.append(payload["victimIP"])
-            temp.append(payload["victimPort"])
-            temp.append(payload["connectionType"])
-            amun.append(temp)
-     except:
-        print('error')
+    if j["channel"] == "glastopf.events":
+        temp.append(payload["pattern"])
+        temp.append(payload["filename"])
+        temp.append(payload["request_raw"])
+        temp.append(payload["request_url"])
+        temp.append(payload["source"][0])
+        temp.append(payload["source"][1])
+        glastopf.append(temp)
+    elif j["channel"] == "amun.events":
+        temp.append(payload["attackerIP"])
+        temp.append(payload["attackerPort"])
+        temp.append(payload["victimIP"])
+        temp.append(payload["victimPort"])
+        temp.append(payload["connectionType"])
+        amun.append(temp)
 f.close()
 
 amun_df = pd.DataFrame(amun, columns=['id','ident','normalized','timestamp','channel','attackerIP','attackerPort','victimIP','victimPort','connectionType'])

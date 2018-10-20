@@ -27,7 +27,12 @@ for line in f:
     temp.append(j["normalized"])
     temp.append(j["timestamp"]["$date"])
     temp.append(j["channel"])
-    payload = json.loads(j["payload"])
+    try:
+        payload = json.loads(j["payload"])
+    except:
+        payload = j["payload"]
+        print(payload)  
+    #payload = json.loads(j["payload"]) is not work for H's laptop
     if j["channel"] == "glastopf.events":
         temp.append(payload["pattern"])
         temp.append(payload["filename"])

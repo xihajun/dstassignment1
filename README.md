@@ -2,7 +2,7 @@ Data Science Toolbox Assignment 1
 ===
 Data Science Toolbox Assignment 1
 ## Install Geoip
->pip install maxminddb-geolilte2
+>pip install maxminddb-geolite2
 
 
 If it shows that the module doesn't exist, please try things below:<br> 
